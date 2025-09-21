@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tushar Mehta | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #111827;
+            --card-bg-color: #1f2937;
+            --text-color: #d1d5db;
+            --header-text-color: #f9fafb;
+            --accent-color: #38bdf8;
+            --border-color: #374151;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* --- Header Section --- */
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-color);
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: var(--header-text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .header .title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        
+        .header .location {
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            margin: 0 0.75rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* --- Navigation Tabs --- */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .tab-link {
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            border: none;
+            background: none;
+            color: var(--text-color);
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-link.active {
+            color: var(--accent-color);
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        /* --- Tab Content --- */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2.section-title {
+            font-size: 2rem;
+            color: var(--header-text-color);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        /* --- About Section --- */
+        #about p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* --- Grid Layouts for Cards --- */
+        .card-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        #academics .card-grid {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+
+        #projects .card-grid {
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        }
+
+        .card {
+            background-color: var(--card-bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* --- Academics Card --- */
+        .academic-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 0.25rem;
+        }
+        .academic-card .institution {
+            color: var(--header-text-color);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        .academic-card .date-location, .academic-card .score {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .academic-card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .academic-card ul li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .academic-card ul li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* --- Project Card --- */
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+        }
+        .project-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+        .project-card p {
+            margin-bottom: 1rem;
+        }
+        .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .tech-tag {
+            background-color: var(--border-color);
+            color: var(--text-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-family: 'Roboto Mono', monospace;
+        }
+        .project-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-right: 1rem;
+            font-weight: 500;
+        }
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+        
+        /* --- Improved Honors & Awards Section --- */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .award-category {
+            background-color: var(--card-bg-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .award-category h3 {
+            color: var(--accent-color);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .award-category h3 i {
+            margin-right: 0.75rem;
+        }
+
+        .award-category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .award-category li {
+            margin-bottom: 1.25rem;
+            padding-left: 1.75rem;
+            position: relative;
+        }
+
+        .award-category li:last-child {
+            margin-bottom: 0;
+        }
+
+        .award-category li::before {
+            content: '\f005'; /* Font Awesome star icon */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            top: 4px;
+            font-size: 0.9rem;
+        }
+
+        .award-category li strong {
+            display: block;
+            color: var(--header-text-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .award-detail {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            display: block;
+            line-height: 1.5;
+        }
+        
+        /* --- Responsive Design --- */
+        @media (min-width: 992px) {
+            .awards-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (min-width: 768px) and (max-width: 991px) {
+            .awards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .tabs {
+                flex-wrap: wrap;
+            }
+            .tab-link {
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+        @media (max-width: 480px) {
+             .container {
+                padding: 1rem 1rem;
+            }
+            .header {
+                 margin-bottom: 2rem;
+            }
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <img src="/assets/images/profile-photo.jpg" alt="Tushar Mehta" class="profile-image" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
+            <h1>Tushar Mehta</h1>
+            <p class="title">Student Researcher | Aspiring AI/ML Engineer</p>
+            <p class="location"><i class="fas fa-map-marker-alt"></i> Allentown, Pennsylvania, USA</p>
+            <div class="social-links">
+                <a href="mailto:mehtat124@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/TMRmehta" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/tushar-mehta-104a21375/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-link active" data-tab="about">About Me</button>
+            <button class="tab-link" data-tab="academics">Academics</button>
+            <button class="tab-link" data-tab="projects">Projects</button>
+            <button class="tab-link" data-tab="honors">Honors & Awards</button>
+        </nav>
+
+        <main>
+            <section id="about" class="tab-content active">
+                <p>
+                    A driven and multidisciplinary high school senior with extensive research and engineering experience across AI, machine learning, robotics, and deep learning. Passionate about creating scalable, real-world solutions in healthcare AI, autonomous systems, and sustainable technology. Skilled in Python, Java, and statistical analysis, with a strong track record of competitive awards and leadership roles in STEM communities.
+                </p>
+            </section>
+
+            <section id="academics" class="tab-content">
+                <h2 class="section-title">Academics & Programs</h2>
+                <div class="card-grid">
+                    <div class="card academic-card">
+                        <h3>High School Diploma (Expected 2026)</h3>
+                        <p class="institution">Parkland High School</p>
+                        <p class="date-location">Aug 2022 - Jun 2026 | Allentown, PA, USA</p>
+                        <p class="score"><strong>GPA:</strong> 4.8/4.0 (weighted)</p>
+                        <ul>
+                            <li>Principal’s List, AP Scholar with Distinction</li>
+                            <li>Member of NHS, MHS, SNHS, SHS, NSSHS, and NEHS honor societies</li>
+                        </ul>
+                    </div>
+                    <div class="card academic-card">
+                        <h3>PGSS Scholar</h3>
+                        <p class="institution">Carnegie Mellon University</p>
+                        <p class="date-location">Jun 2025 - Jul 2025 | Pittsburgh, PA, USA</p>
+                        <ul>
+                            <li>Intensive five-week STEM program including core classes and a team research project with a final paper and presentation.</li>
+                        </ul>
+                    </div>
+                    <div class="card academic-card">
+                        <h3>NASA Data Science Analysis Scholar</h3>
+                        <p class="institution">George Mason University</p>
+                        <p class="date-location">Jun 2025 - Aug 2025 | Fairfax, VA, USA (Hybrid)</p>
+                         <ul>
+                            <li>Analyzed TESS exoplanet data using statistical validation methods.</li>
+                            <li>Authored and presented a research paper at a hybrid conference.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="tab-content">
+                 <h2 class="section-title">Projects</h2>
+                 <div class="card-grid">
+                    <div class="card project-card">
+                        <img src="/assets/images/project-pulmoaid.png" alt="PulmoAID Project" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x200/1f2937/d1d5db?text=PulmoAID';">
+                        <h3>PulmoAID – Multimodal Lung Cancer Diagnostics</h3>
+                        <p>Developed a novel multimodal deep learning algorithm integrating CT imaging with demographic and clinical data to enhance lung cancer detection. Built a global web application for real-world screening.</p>
+                        <div class="technologies">
+                           <span class="tech-tag">Python</span><span class="tech-tag">Deep Learning</span><span class="tech-tag">LLM-driven Interpretability</span><span class="tech-tag">Streamlit</span>
+                        </div>
+                    </div>
+                     <div class="card project-card">
+                        <img src="/assets/images/project-neuroaid.png" alt="NeuroAID Project" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x200/1f2937/d1d5db?text=NeuroAID';">
+                        <h3>NeuroAID – Brain Tumor Detection</h3>
+                        <p>Explainable AI system for automated brain tumor detection and classification using MRI data, deployed as a global screening web app.</p>
+                        <div class="technologies">
+                           <span class="tech-tag">Python</span><span class="tech-tag">Machine Learning</span><span class="tech-tag">Explainable AI</span><span class="tech-tag">Streamlit</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="/assets/JEI_NeuroAID.docx" target="_blank">Journal Draft</a>
+                            <a href="/assets/Columbia_Junior_Science_Journal_NeuroAid.doc" target="_blank">Preprint</a>
+                        </div>
+                    </div>
+                    <div class="card project-card">
+                        <img src="/assets/images/project-recyclebot.png" alt="RecycleBot Project" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x200/1f2937/d1d5db?text=RecycleBot';">
+                        <h3>RecycleBot – Automated Waste Detection</h3>
+                        <p>CNN image classifier that distinguishes recyclable from organic waste; shipped as a web app and published in a peer-reviewed journal.</p>
+                        <div class="technologies">
+                           <span class="tech-tag">Python</span><span class="tech-tag">CNN</span><span class="tech-tag">Computer Vision</span><span class="tech-tag">Streamlit</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="/assets/RecycleBot_Publication_NHSJS_QRCode.png" target="_blank">Publication QR</a>
+                        </div>
+                    </div>
+                     <div class="card project-card">
+                        <img src="/assets/images/project-autonomous.png" alt="Autonomous Driving Project" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x200/1f2937/d1d5db?text=Sensor+Fusion';">
+                        <h3>Autonomous Driving Sensor Fusion</h3>
+                        <p>Deep reinforcement learning for optimal sensor selection and fusion across Cameras, LiDAR, and Radar.</p>
+                        <div class="technologies">
+                           <span class="tech-tag">Python</span><span class="tech-tag">Deep Reinforcement Learning</span><span class="tech-tag">Sensor Fusion</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="/assets/PGSS Modeling and Predicting the Behaviors of Inductive Traffic Loops.pdf" target="_blank">Report</a>
+                        </div>
+                    </div>
+                     <div class="card project-card">
+                        <img src="/assets/images/project-exoplanet.png" alt="Exoplanet Project" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x200/1f2937/d1d5db?text=Exoplanet+Transit';">
+                        <h3>Exoplanet Transit Follow-up (TOI-5516.01)</h3>
+                        <p>Ground-based light-curve follow-up and validation of a TESS Object of Interest using GMU’s 0.8 m telescope; reduction and analysis in AstroImageJ.</p>
+                        <div class="technologies">
+                           <span class="tech-tag">AstroImageJ</span><span class="tech-tag">Photometry</span><span class="tech-tag">Python</span>
+                        </div>
+                         <div class="project-links">
+                            <a href="/assets/NASA_TOI5516_Paper_Journal of Astro-Scholars Research (JASR) .pdf" target="_blank">Research Paper</a>
+                        </div>
+                    </div>
+                 </div>
+            </section>
+
+            <section id="honors" class="tab-content">
+                <h2 class="section-title">Honors & Awards</h2>
+                <div class="awards-grid">
+            
+                    <div class="award-category">
+                        <h3><i class="fas fa-microchip"></i> STEM & Computer Science</h3>
+                        <ul>
+                            <li>
+                                <strong>USA Computing Olympiad (USACO) Gold Division</strong>
+                                <span class="award-detail">Achieved Gold, a top competitive tier in the premier national algorithm programming contest for high school students. (2025)</span>
+                            </li>
+                            <li>
+                                <strong>U.S. Congressional App Challenge Winner (2x)</strong>
+                                <span class="award-detail">Winning app was selected to represent Pennsylvania's 7th congressional district in Washington, D.C. (2023, 2025)</span>
+                            </li>
+                             <li>
+                                <strong>National STEM Champion</strong>
+                                <span class="award-detail">Recognized by President Obama; represented Pennsylvania at the National Science Foundation in Washington, D.C. (2024)</span>
+                            </li>
+                            <li>
+                                <strong>Multiple Science Fair Winner</strong>
+                                 <span class="award-detail">Secured consistent 1st-3rd place awards at Lehigh Valley, Delaware Valley, and Penn State Academy science fairs. (2021–2025)</span>
+                            </li>
+                        </ul>
+                    </div>
+            
+                    <div class="award-category">
+                        <h3><i class="fas fa-users"></i> Leadership & Robotics</h3>
+                        <ul>
+                            <li>
+                                <strong>FIRST Tech Challenge (FTC) Awards</strong>
+                                 <span class="award-detail">Received the Regional Design & Inspire Award and recognized as a State Finalist for the Design Award. (2023, 2024)</span>
+                            </li>
+                             <li>
+                                <strong>FIRST Lego League World Finalist</strong>
+                                <span class="award-detail">Advanced from Regional Champion to compete as an international finalist against teams from around the world. (2020, 2022)</span>
+                            </li>
+                            <li>
+                                <strong>Pennsylvania Youth Ambassador</strong>
+                                <span class="award-detail">Selected as a dedicated youth representative for the state of Pennsylvania. (2023–2024)</span>
+                            </li>
+                        </ul>
+                    </div>
+            
+                    <div class="award-category">
+                        <h3><i class="fas fa-chart-line"></i> Academic & Business</h3>
+                         <ul>
+                             <li>
+                                <strong>FBLA Stock Market Game National Winner</strong>
+                                <span class="award-detail">Secured 2nd Place at the national level, complemented by multiple national and state finalist recognitions. (2023-2025)</span>
+                            </li>
+                            <li>
+                                <strong>National History Day National Winner</strong>
+                                <span class="award-detail">Placed 1st regionally before advancing to rank in the Top 20 nationally for historical research and presentation. (2024)</span>
+                            </li>
+                            <li>
+                                <strong>Mathematics Competitions Top Performer</strong>
+                                <span class="award-detail">Consistently recognized as a top performer in AMC 10/12, PML, and ASMC mathematics competitions. (2022–2025)</span>
+                            </li>
+                         </ul>
+                    </div>
+            
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab-link');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Get the target tab content ID from the data attribute
+                    const target = tab.getAttribute('data-tab');
+                    const targetContent = document.getElementById(target);
+
+                    // Remove active class from all tabs and content
+                    tabs.forEach(t => t.classList.remove('active'));
+                    contents.forEach(c => c.classList.remove('active'));
+
+                    // Add active class to the clicked tab and corresponding content
+                    tab.classList.add('active');
+                    targetContent.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
