@@ -27,103 +27,301 @@
         <div class="page-title">
             <h1>Projects and Research</h1>
             <div class="underline"></div>
+            
+            <!-- Category Navigation -->
+            <div class="category-nav">
+                <a href="#scientific" class="category-link">Scientific</a>
+                <a href="#humanities" class="category-link">Humanities</a>
+            </div>
         </div>
     </section>
 
-    <main class="projects-container">
+    <!-- Timeline Sidebar -->
+    <aside class="timeline-sidebar">
+        <div class="timeline-item" data-category="biology">
+            <div class="timeline-dot"></div>
+            <span class="timeline-label">Biology/Medicine</span>
+        </div>
+        <div class="timeline-item" data-category="environment">
+            <div class="timeline-dot"></div>
+            <span class="timeline-label">Environment</span>
+        </div>
+        <div class="timeline-item" data-category="physics">
+            <div class="timeline-dot"></div>
+            <span class="timeline-label">Physics</span>
+        </div>
+        <div class="timeline-item" data-category="history">
+            <div class="timeline-dot"></div>
+            <span class="timeline-label">History</span>
+        </div>
+        <div class="timeline-item" data-category="education">
+            <div class="timeline-dot"></div>
+            <span class="timeline-label">Education</span>
+        </div>
+    </aside>
+
+    <main class="research-timeline">
         
-        <div class="project-card">
-            <div class="project-image">
-                <img src="assets/images/project-pulmoaid.png" alt="PulmoAID Project">
-            </div>
-            <div class="project-details">
-                <h3>PulmoAID – Multimodal Lung Cancer Diagnostics</h3>
-                <p>Developed a novel multimodal deep learning algorithm integrating CT imaging with demographic and clinical data to enhance lung cancer detection. Built a global web application for real-world screening.</p>
-                <div class="technologies">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Deep Learning</span>
-                    <span class="tech-tag">LLM-driven Interpretability</span>
-                    <span class="tech-tag">Streamlit</span>
+        <!-- Scientific Section -->
+        <section id="scientific" class="research-section">
+            <h2 class="section-title">Scientific Research</h2>
+            
+            <!-- Biology/Medicine Projects -->
+            <div class="project-item" data-category="biology">
+                <div class="project-content">
+                    <div class="project-image">
+                        <img src="assets/images/project-neuroaid.png" alt="NeuroAID Project">
+                    </div>
+                    <div class="project-details">
+                        <h3>NeuroAID – Brain Tumor Detection</h3>
+                        <p>Explainable AI system for automated brain tumor detection and classification using MRI data, deployed as a global screening web app.</p>
+                        <div class="technologies">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Explainable AI</span>
+                            <span class="tech-tag">Streamlit</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="assets/images/JEI_NeuroAID.pdf" target="_blank" class="btn-link">Publication</a>
+                            <a href="assets/images/JEI_NeuroAID.pdf" target="_blank" class="btn-link">Preprint</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="project-card image-right">
-            <div class="project-details">
-                <h3>NeuroAID – Brain Tumor Detection</h3>
-                <p>Explainable AI system for automated brain tumor detection and classification using MRI data, deployed as a global screening web app.</p>
-                <div class="technologies">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Machine Learning</span>
-                    <span class="tech-tag">Explainable AI</span>
-                    <span class="tech-tag">Streamlit</span>
-                </div>
-                <div class="project-links">
-                    <a href="assets/images/JEI_NeuroAID.pdf" target="_blank" class="btn-link">Publication</a>
-                    <a href="assets/images/JEI_NeuroAID.pdf" target="_blank" class="btn-link">Preprint</a>
+            <div class="project-item" data-category="biology">
+                <div class="project-content reverse">
+                    <div class="project-image">
+                        <img src="assets/images/project-pulmoaid.png" alt="PulmoAID Project">
+                    </div>
+                    <div class="project-details">
+                        <h3>PulmoAID – Multimodal Lung Cancer Diagnostics</h3>
+                        <p>Developed a novel multimodal deep learning algorithm integrating CT imaging with demographic and clinical data to enhance lung cancer detection. Built a global web application for real-world screening.</p>
+                        <div class="technologies">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">LLM-driven Interpretability</span>
+                            <span class="tech-tag">Streamlit</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="project-image">
-                <img src="assets/images/project-neuroaid.png" alt="NeuroAID Project">
-            </div>
-        </div>
 
-        <div class="project-card">
-            <div class="project-image">
-                <img src="assets/images/project-recyclebot.png" alt="RecycleBot Project">
-            </div>
-            <div class="project-details">
-                <h3>RecycleBot – Automated Waste Detection</h3>
-                <p>CNN image classifier that distinguishes recyclable from organic waste; shipped as a web app and published in a peer-reviewed journal.</p>
-                <div class="technologies">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">CNN</span>
-                    <span class="tech-tag">Computer Vision</span>
-                    <span class="tech-tag">Streamlit</span>
-                </div>
-                <div class="project-links">
-                    <a href="assets/RecycleBot_Publication_NHSJS_QRCode.png" target="_blank" class="btn-link">Publication QR</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="project-card image-right">
-            <div class="project-details">
-                <h3>Autonomous Driving Sensor Fusion</h3>
-                <p>Deep reinforcement learning for optimal sensor selection and fusion across Cameras, LiDAR, and Radar.</p>
-                <div class="technologies">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Deep Reinforcement Learning</span>
-                    <span class="tech-tag">Sensor Fusion</span>
-                </div>
-                <div class="project-links">
-                    <a href="assets/PGSS Modeling and Predicting the Behaviors of Inductive Traffic Loops.pdf" target="_blank" class="btn-link">View Report</a>
+            <!-- Environment Projects -->
+            <div class="project-item" data-category="environment">
+                <div class="project-content">
+                    <div class="project-image">
+                        <img src="assets/images/project-recyclebot.png" alt="RecycleBot Project">
+                    </div>
+                    <div class="project-details">
+                        <h3>RecycleBot – Automated Waste Detection</h3>
+                        <p>CNN image classifier that distinguishes recyclable from organic waste; shipped as a web app and published in a peer-reviewed journal.</p>
+                        <div class="technologies">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">CNN</span>
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">Streamlit</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="assets/RecycleBot_Publication_NHSJS_QRCode.png" target="_blank" class="btn-link">Publication QR</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="project-image">
-                <img src="assets/images/project-autonomous.png" alt="Autonomous Driving Project">
-            </div>
-        </div>
 
-        <div class="project-card">
-            <div class="project-image">
-                <img src="assets/images/project-exoplanet.png" alt="Exoplanet Project">
-            </div>
-            <div class="project-details">
-                <h3>Exoplanet Transit Follow-up (TOI-5516.01)</h3>
-                <p>Ground-based light-curve follow-up and validation of a TESS Object of Interest using GMU’s 0.8 m telescope; reduction and analysis in AstroImageJ.</p>
-                <div class="technologies">
-                    <span class="tech-tag">AstroImageJ</span>
-                    <span class="tech-tag">Photometry</span>
-                    <span class="tech-tag">Python</span>
+            <div class="project-item" data-category="environment">
+                <div class="project-content reverse">
+                    <div class="project-image">
+                        <img src="assets/images/air-quality.png" alt="Air Quality Project">
+                    </div>
+                    <div class="project-details">
+                        <h3>Air Quality NowCasting</h3>
+                        <p>Advanced machine learning system for real-time air quality prediction and environmental monitoring.</p>
+                        <div class="technologies">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Time Series Analysis</span>
+                            <span class="tech-tag">Environmental Science</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-links">
-                    <a href="assets/NASA_TOI5516_Paper_Journal of Astro-Scholars Research (JASR) .pdf" target="_blank" class="btn-link">Research Paper</a>
+            </div>
+
+            <!-- Physics Projects -->
+            <div class="project-item" data-category="physics">
+                <div class="project-content">
+                    <div class="project-image">
+                        <img src="assets/images/project-autonomous.png" alt="Autonomous Driving Project">
+                    </div>
+                    <div class="project-details">
+                        <h3>Sensor Fusion for Autonomous Vehicles</h3>
+                        <p>Deep reinforcement learning for optimal sensor selection and fusion across Cameras, LiDAR, and Radar.</p>
+                        <div class="technologies">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Deep Reinforcement Learning</span>
+                            <span class="tech-tag">Sensor Fusion</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="assets/PGSS Modeling and Predicting the Behaviors of Inductive Traffic Loops.pdf" target="_blank" class="btn-link">View Report</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+
+            <div class="project-item" data-category="physics">
+                <div class="project-content reverse">
+                    <div class="project-image">
+                        <img src="assets/images/project-exoplanet.png" alt="Exoplanet Project">
+                    </div>
+                    <div class="project-details">
+                        <h3>NASA Exoplanet Transit Processing</h3>
+                        <p>Ground-based light-curve follow-up and validation of a TESS Object of Interest (TOI-5516.01) using GMU's 0.8 m telescope; reduction and analysis in AstroImageJ.</p>
+                        <div class="technologies">
+                            <span class="tech-tag">AstroImageJ</span>
+                            <span class="tech-tag">Photometry</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="assets/NASA_TOI5516_Paper_Journal of Astro-Scholars Research (JASR) .pdf" target="_blank" class="btn-link">Research Paper</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item" data-category="physics">
+                <div class="project-content">
+                    <div class="project-image">
+                        <img src="assets/images/traffic-monitoring.png" alt="Traffic Monitoring Project">
+                    </div>
+                    <div class="project-details">
+                        <h3>Traffic Congestion Monitoring with Privacy</h3>
+                        <p>Innovative system for monitoring traffic patterns while preserving individual privacy through advanced computational techniques.</p>
+                        <div class="technologies">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">Privacy Engineering</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Humanities Section -->
+        <section id="humanities" class="research-section">
+            <h2 class="section-title">Humanities Research</h2>
+            
+            <div class="project-item" data-category="history">
+                <div class="project-content reverse">
+                    <div class="project-image">
+                        <img src="assets/images/history-medicine.png" alt="Women in Medicine Project">
+                    </div>
+                    <div class="project-details">
+                        <h3>Elizabeth Blackwell: Women's Role in Medicine</h3>
+                        <p>Historical analysis examining the pioneering contributions of Elizabeth Blackwell and the broader evolution of women's participation in medical sciences.</p>
+                        <div class="technologies">
+                            <span class="tech-tag">Historical Research</span>
+                            <span class="tech-tag">Medical History</span>
+                            <span class="tech-tag">Gender Studies</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item" data-category="history">
+                <div class="project-content">
+                    <div class="project-image">
+                        <img src="assets/images/gandhi-research.png" alt="Gandhi Research Project">
+                    </div>
+                    <div class="project-details">
+                        <h3>Gandhi: Servant of the Nation</h3>
+                        <p>Comprehensive study of Mahatma Gandhi's philosophy, leadership, and lasting impact on India's independence movement and global civil rights.</p>
+                        <div class="technologies">
+                            <span class="tech-tag">Historical Analysis</span>
+                            <span class="tech-tag">Political Science</span>
+                            <span class="tech-tag">Social Studies</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item" data-category="history">
+                <div class="project-content reverse">
+                    <div class="project-image">
+                        <img src="assets/images/parc-case.png" alt="PARC Case Study">
+                    </div>
+                    <div class="project-details">
+                        <h3>PARC v. Pennsylvania Case & Dual Fight for Rights</h3>
+                        <p>Legal and historical analysis of the landmark PARC v. Pennsylvania case and its dual significance in advancing both disability rights and educational access.</p>
+                        <div class="technologies">
+                            <span class="tech-tag">Legal History</span>
+                            <span class="tech-tag">Civil Rights</span>
+                            <span class="tech-tag">Educational Policy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item" data-category="education">
+                <div class="project-content">
+                    <div class="project-image">
+                        <img src="assets/images/education-research.png" alt="Education Research Project">
+                    </div>
+                    <div class="project-details">
+                        <h3>Education for All: Policy and Implementation</h3>
+                        <p>Research examining educational equity policies, accessibility initiatives, and their real-world implementation across diverse communities.</p>
+                        <div class="technologies">
+                            <span class="tech-tag">Educational Research</span>
+                            <span class="tech-tag">Policy Analysis</span>
+                            <span class="tech-tag">Social Impact</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
     </main>
+
+    <script>
+        // Smooth scrolling for category navigation
+        document.querySelectorAll('.category-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                const offset = 100;
+                const targetPosition = target.offsetTop - offset;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Timeline sidebar highlighting based on scroll
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const projectItems = document.querySelectorAll('.project-item');
+
+        function updateTimeline() {
+            const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+            projectItems.forEach(project => {
+                const projectTop = project.offsetTop;
+                const projectBottom = projectTop + project.offsetHeight;
+                const category = project.getAttribute('data-category');
+
+                if (scrollPosition >= projectTop && scrollPosition <= projectBottom) {
+                    timelineItems.forEach(item => {
+                        if (item.getAttribute('data-category') === category) {
+                            item.classList.add('active');
+                        } else {
+                            item.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateTimeline);
+        updateTimeline();
+    </script>
 
 </body>
 </html>
