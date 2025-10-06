@@ -258,7 +258,7 @@ nav a:hover, nav a.active {
     transform: translateY(-2px);
 }
 
-/* Timeline Sidebar */
+/* --- Enhanced Sidebar Scroll Indicator --- */
 .timeline-sidebar {
     position: fixed;
     left: 30px;
@@ -267,9 +267,11 @@ nav a:hover, nav a.active {
     z-index: 100;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 25px;
+    align-items: flex-start;
 }
 
+/* Every label visible at all times */
 .timeline-item {
     display: flex;
     align-items: center;
@@ -279,40 +281,45 @@ nav a:hover, nav a.active {
 }
 
 .timeline-dot {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
     background-color: #d1d5db;
-    border: 3px solid #ffffff;
+    border: 2px solid #fff;
     box-shadow: 0 0 0 2px #d1d5db;
     transition: all 0.3s ease;
 }
 
+/* Labels are always visible but muted */
 .timeline-label {
     font-size: 0.9rem;
-    color: #6b7280;
-    opacity: 0;
-    transform: translateX(-10px);
-    transition: all 0.3s ease;
+    color: #9ca3af;
+    opacity: 0.7;
+    transform: translateX(0);
     white-space: nowrap;
     font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.timeline-item:hover .timeline-label {
+/* Highlight active section */
+.timeline-item.active .timeline-label {
+    color: #111827;
     opacity: 1;
-    transform: translateX(0);
+    font-size: 1.2rem;
+    font-weight: 700;
+    transform: scale(1.05);
 }
 
 .timeline-item.active .timeline-dot {
     background-color: #f0b90b;
-    box-shadow: 0 0 0 2px #f0b90b, 0 0 12px rgba(240, 185, 11, 0.4);
-    transform: scale(1.2);
+    box-shadow: 0 0 0 3px #f0b90b, 0 0 10px rgba(240, 185, 11, 0.5);
+    transform: scale(1.3);
 }
 
-.timeline-item.active .timeline-label {
-    color: #111827;
+/* Hover feedback */
+.timeline-item:hover .timeline-label {
+    color: #374151;
     opacity: 1;
-    transform: translateX(0);
 }
 
 /* Research Timeline - Continuous Layout */
@@ -741,3 +748,4 @@ nav a:hover, nav a.active {
     color: #333;
     transition: transform 0.3s ease-in-out;
 }
+
