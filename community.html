@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community - Tushar Mehta</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+  <section id="projects-page-header">
+    <header>
+      <div class="logo">
+        <a href="index.html">Tushar Mehta</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Research</a></li>
+          <li><a href="experiences.html">Experiences</a></li>
+          <li><a href="community.html" class="active">Community</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="page-title">
+      <h1>Community Involvement</h1>
+      <div class="underline"></div>
+      <div class="category-nav">
+        <a href="#volunteerism" class="category-link">Volunteerism</a>
+        <a href="#business" class="category-link">Business</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- <aside class="timeline-sidebar">
+    <div class="timeline-item" data-category="volunteerism">
+        <div class="timeline-dot"></div>
+        <span class="timeline-label">Volunteerism</span>
+    </div>
+    <div class="timeline-item" data-category="business">
+        <div class="timeline-dot"></div>
+        <span class="timeline-label">Business</span>
+    </div>
+  </aside> -->
+
+  <main class="research-timeline" id="community-timeline"> 
+    
+    <section id="volunteerism" class="research-section">
+      <h2 class="section-title">Volunteerism</h2>
+
+      <div class="project-item" data-category="volunteerism">
+        <div class="project-content">
+          <div class="project-image">
+            <img src="assets/images/yuvsatta.jpg" alt="Yuvsatta" />
+          </div>
+          <div class="project-details">
+            <h3>Yuvsatta</h3>
+            <p>Worked with Yuvsatta to promote youth-driven sustainability and social equity campaigns.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-item" data-category="volunteerism">
+        <div class="project-content reverse">
+          <div class="project-image">
+            <img src="assets/images/pa-youth.jpg" alt="PA Youth Ambassador" />
+          </div>
+          <div class="project-details">
+            <h3>PA Youth Ambassador</h3>
+            <p>Represented youth voices in policy dialogues for community welfare and environmental awareness in Pennsylvania.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-item" data-category="volunteerism">
+        <div class="project-content">
+          <div class="project-image">
+            <img src="assets/images/sierra-club.jpg" alt="Sierra Club" />
+          </div>
+          <div class="project-details">
+            <h3>Sierra Club</h3>
+            <p>Collaborated on ecological education and urban sustainability initiatives under the Sierra Club’s local chapter.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
+    <section id="business" class="research-section">
+      <h2 class="section-title">Business</h2>
+
+      <div class="project-item" data-category="business">
+        <div class="project-content">
+          <div class="project-image">
+            <img src="assets/images/oncosight.jpg" alt="OncoSight" />
+          </div>
+          <div class="project-details">
+            <h3>OncoSight</h3>
+            <p>Founder of an AI-powered healthcare startup enabling cancer patients to access explainable research insights.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-item" data-category="business">
+        <div class="project-content reverse">
+          <div class="project-image">
+            <img src="assets/images/air-quality.jpg" alt="Air Quality Risk Monitor" />
+          </div>
+          <div class="project-details">
+            <h3>Air Quality Risk Monitor</h3>
+            <p>Developed an environmental analytics tool that democratizes access to real-time air quality data for public health safety.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Smooth scrolling for category navigation buttons
+    document.querySelectorAll('.category-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        // Use a consistent offset to account for the fixed header
+        const offset = 100;
+        window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+      });
+    });
+
+    // Sidebar highlighting script adapted from experiences.html
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    function updateTimeline() {
+        // Check the middle of the viewport for the active section
+        const scrollPosition = window.scrollY + window.innerHeight / 2.5;
+
+        projectItems.forEach(item => {
+            const itemTop = item.offsetTop;
+            const itemBottom = itemTop + item.offsetHeight;
+            // The category is the section identifier
+            const category = item.getAttribute('data-category');
+
+            if (scrollPosition >= itemTop && scrollPosition <= itemBottom) {
+                timelineItems.forEach(timelineItem => {
+                    if (timelineItem.getAttribute('data-category') === category) {
+                        timelineItem.classList.add('active');
+                    } else {
+                        timelineItem.classList.remove('active');
+                    }
+                });
+            }
+        });
+    }
+
+    window.addEventListener('scroll', updateTimeline);
+    window.addEventListener('resize', updateTimeline);
+    // Initial call to set the active item on page load
+    updateTimeline();
+  </script>
+
+</body>
+</html>
