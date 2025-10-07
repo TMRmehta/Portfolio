@@ -3,9 +3,9 @@ body {
     /* Use a standard, clean font */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    /* Set background to plain white for all pages as requested */
-    background-color: #ffffff;
-    color: #333; /* Dark text for contrast */
+    /* Professional light blue background */
+    background-color: #e8f4f8;
+    color: #1e3a5f; /* Deep blue text for contrast */
     overflow-x: hidden; /* Prevents horizontal scroll */
 }
 
@@ -26,7 +26,7 @@ header {
 .logo a {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #111827; /* Dark logo color for white background pages */
+    color: #051835; /* Professional deep blue */
     text-decoration: none;
 }
 
@@ -40,7 +40,7 @@ nav ul {
 }
 
 nav a {
-    color: #4b5563; /* Default link color */
+    color: #0e417c; /* Medium blue link color */
     text-decoration: none;
     font-size: 1rem;
     padding-bottom: 5px;
@@ -48,11 +48,11 @@ nav a {
 }
 
 nav a:hover, nav a.active {
-    color: #111827; /* Darker hover/active color */
-    border-bottom: 2px solid #f0b90b; /* Gold accent color for active link */
+    color: #051835; /* Darker hover/active color */
+    border-bottom: 2px solid #125184; /* Bright blue accent */
 }
 
-/* Home Section (Now just a container for content on a white background) */
+/* Home Section */
 #home {
     position: relative;
     height: 100vh;
@@ -61,10 +61,8 @@ nav a:hover, nav a.active {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: none; /* Removed background image */
+    background: none;
 }
-
-/* Removed background-overlay as the background is white */
 
 /* Main Hero Content */
 .hero-content {
@@ -83,27 +81,27 @@ nav a:hover, nav a.active {
 .text-content {
     flex: 1;
     max-width: 500px;
-    color: #333; /* Ensure text is readable */
+    color: #1e3a5f;
 }
 
 .text-content h1 {
     font-size: 4rem;
     margin: 0 0 10px 0;
     font-weight: 600;
-    color: #111827;
+    color: #051835;
 }
 
 .underline {
     width: 70px;
     height: 4px;
-    background-color: #f0b90b; /* Gold accent color */
+    background-color: #125184; /* Bright blue accent */
     margin-bottom: 20px;
 }
 
 .text-content p {
     font-size: 1.5rem;
     line-height: 1.6;
-    color: #4b5563;
+    color: #0e417c;
 }
 
 .text-content i {
@@ -115,16 +113,17 @@ nav a:hover, nav a.active {
     margin-top: 30px;
     display: flex;
     gap: 20px;
+    font-style: normal;  /* ✅ Overrides inherited italic style */
 }
 
 .social-icons a {
-    color: #4b5563;
+    color: #0e417c;
     font-size: 1.8rem;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: #f0b90b; /* Gold hover color */
+    color: #125184; /* Bright blue hover */
     transform: scale(1.1);
 }
 
@@ -141,7 +140,7 @@ nav a:hover, nav a.active {
     width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Added subtle shadow for visual separation */
+    box-shadow: 0 6px 20px rgba(13, 71, 161, 0.15);
 }
 
 /* Bottom Icons (for home page only) */
@@ -169,7 +168,7 @@ nav a:hover, nav a.active {
 }
 
 .scroll-down-icon a {
-    color: #111827; /* Dark color on white background */
+    color: #051835;
 }
 
 /* Bouncing Animation for Scroll Arrow */
@@ -198,8 +197,8 @@ nav a:hover, nav a.active {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #f4f4f4 0%, #e8e8e8 100%);
-    color: #111827;
+    background: linear-gradient(135deg, #bbdefb 0%, #c6e5ff 100%);
+    color: #051835;
 }
 
 /* Adjust header positioning on this page */
@@ -208,7 +207,6 @@ nav a:hover, nav a.active {
     top: 0;
     left: 0;
     width: 100%;
-    /* Header styles inherited from base header */
 }
 
 .page-title {
@@ -222,13 +220,13 @@ nav a:hover, nav a.active {
     font-size: 3.5rem;
     font-weight: 600;
     margin: 0;
-    color: #111827;
+    color: #051835;
 }
 
 .page-title .underline {
     width: 100px;
     height: 4px;
-    background-color: #f0b90b; /* Gold accent color */
+    background-color: #125184;
     margin: 15px auto 20px auto;
 }
 
@@ -241,33 +239,34 @@ nav a:hover, nav a.active {
 }
 
 .category-link {
-    color: #4b5563;
+    color: #0e417c;
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 500;
     padding: 10px 25px;
-    border: 2px solid #d1d5db;
+    border: 2px solid #64b5f6;
     border-radius: 25px;
     transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .category-link:hover {
-    background-color: #f0b90b;
+    background-color: #125184;
     color: #ffffff;
-    border-color: #f0b90b;
+    border-color: #125184;
     transform: translateY(-2px);
 }
 
-/* --- Enhanced Sidebar Scroll Indicator --- */
+/* --- Enhanced Sidebar Scroll Indicator (INCREASED SIZE) --- */
 .timeline-sidebar {
     position: fixed;
-    left: 30px;
+    left: 40px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 100;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 35px;
     align-items: flex-start;
 }
 
@@ -275,25 +274,25 @@ nav a:hover, nav a.active {
 .timeline-item {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .timeline-dot {
-    width: 14px;
-    height: 14px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
-    background-color: #d1d5db;
-    border: 2px solid #fff;
-    box-shadow: 0 0 0 2px #d1d5db;
+    background-color: #c6e5ff;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 3px #c6e5ff;
     transition: all 0.3s ease;
 }
 
 /* Labels are always visible but muted */
 .timeline-label {
-    font-size: 0.9rem;
-    color: #9ca3af;
+    font-size: 1.1rem;
+    color: #0e417c;
     opacity: 0.7;
     transform: translateX(0);
     white-space: nowrap;
@@ -303,31 +302,33 @@ nav a:hover, nav a.active {
 
 /* Highlight active section */
 .timeline-item.active .timeline-label {
-    color: #111827;
+    color: #051835;
     opacity: 1;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 700;
     transform: scale(1.05);
 }
 
 .timeline-item.active .timeline-dot {
-    background-color: #f0b90b;
-    box-shadow: 0 0 0 3px #f0b90b, 0 0 10px rgba(240, 185, 11, 0.5);
-    transform: scale(1.3);
+    background-color: #125184;
+    box-shadow: 0 0 0 4px #125184, 0 0 12px rgba(33, 150, 243, 0.6);
+    transform: scale(1.4);
+    width: 20px;
+    height: 20px;
 }
 
 /* Hover feedback */
 .timeline-item:hover .timeline-label {
-    color: #374151;
+    color: #051835;
     opacity: 1;
 }
 
 /* Research Timeline - Continuous Layout */
 .research-timeline {
-    padding: 60px 80px 60px 180px;
+    padding: 60px 80px 60px 220px;
     max-width: 1400px;
     margin: 0 auto;
-    background-color: #ffffff;
+    background-color: #e8f4f8;
 }
 
 .research-section {
@@ -336,10 +337,10 @@ nav a:hover, nav a.active {
 
 .section-title {
     font-size: 2.5rem;
-    color: #111827;
+    color: #051835;
     margin-bottom: 50px;
     padding-bottom: 15px;
-    border-bottom: 3px solid #f0b90b;
+    border-bottom: 3px solid #125184;
     font-weight: 600;
 }
 
@@ -365,15 +366,15 @@ nav a:hover, nav a.active {
     padding: 40px;
     background-color: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 20px rgba(13, 71, 161, 0.08);
     transition: all 0.4s ease;
     border-left: 4px solid transparent;
 }
 
 .project-content:hover {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 30px rgba(13, 71, 161, 0.15);
     transform: translateX(10px);
-    border-left-color: #f0b90b;
+    border-left-color: #125184;
 }
 
 /* Reverse layout for alternating pattern */
@@ -391,7 +392,7 @@ nav a:hover, nav a.active {
     max-width: 500px;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 15px rgba(13, 71, 161, 0.12);
 }
 
 .project-image img {
@@ -408,14 +409,14 @@ nav a:hover, nav a.active {
 
 .project-details {
     flex: 1.2;
-    color: #333;
+    color: #1e3a5f;
 }
 
 .project-details h3 {
     font-size: 1.9rem;
     margin-top: 0;
     margin-bottom: 1rem;
-    color: #111827;
+    color: #051835;
     font-weight: 600;
 }
 
@@ -423,7 +424,7 @@ nav a:hover, nav a.active {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 1.5rem;
-    color: #4b5563;
+    color: #0e417c;
 }
 
 .technologies {
@@ -434,8 +435,8 @@ nav a:hover, nav a.active {
 }
 
 .tech-tag {
-    background-color: #e5e7eb;
-    color: #374151;
+    background-color: #bbdefb;
+    color: #051835;
     padding: 0.4rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -445,7 +446,7 @@ nav a:hover, nav a.active {
 }
 
 .tech-tag:hover {
-    background-color: #f0b90b;
+    background-color: #125184;
     color: #ffffff;
     transform: translateY(-2px);
 }
@@ -458,21 +459,21 @@ nav a:hover, nav a.active {
 
 .project-links .btn-link {
     display: inline-block;
-    background-color: #111827;
+    background-color: #0e417c;
     color: white;
     padding: 12px 28px;
     border-radius: 6px;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
-    border: 2px solid #111827;
+    border: 2px solid #0e417c;
 }
 
 .project-links .btn-link:hover {
-    background-color: transparent;
-    color: #111827;
+    background-color: #125184;
+    border-color: #125184;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
 }
 
 /* Old Project Card Styles (Kept for other pages) */
@@ -487,7 +488,7 @@ nav a:hover, nav a.active {
 .project-card {
     background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 20px rgba(13, 71, 161, 0.1);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -495,12 +496,12 @@ nav a:hover, nav a.active {
     width: 90%;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #e5e7eb;
+    border: 1px solid #bbdefb;
 }
 
 .project-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 12px 24px rgba(13, 71, 161, 0.15);
 }
 
 .project-card .project-image {
@@ -520,7 +521,7 @@ nav a:hover, nav a.active {
 .project-card .project-details {
     flex: 1.2;
     padding: 40px;
-    color: #333;
+    color: #1e3a5f;
 }
 
 .project-card.image-right {
@@ -552,13 +553,13 @@ nav a:hover, nav a.active {
 .video-info h4 {
     font-size: 1.2rem;
     margin-top: 0;
-    color: #222;
+    color: #051835;
 }
 
 .video-info p {
     font-size: 0.9rem;
     line-height: 1.5;
-    color: #555;
+    color: #0e417c;
 }
 
 /* ------------------------------------------- */
@@ -566,11 +567,20 @@ nav a:hover, nav a.active {
 /* ------------------------------------------- */
 @media (max-width: 1200px) {
     .research-timeline {
-        padding: 60px 40px 60px 120px;
+        padding: 60px 40px 60px 160px;
     }
     
     .timeline-sidebar {
-        left: 20px;
+        left: 30px;
+        gap: 30px;
+    }
+    
+    .timeline-label {
+        font-size: 1rem;
+    }
+    
+    .timeline-item.active .timeline-label {
+        font-size: 1.3rem;
     }
     
     .project-content {
@@ -739,13 +749,14 @@ nav a:hover, nav a.active {
     .section-title {
         font-size: 1.7rem;
     }
-}d-card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    padding: 20px;
-    color: #333;
-    transition: transform 0.3s ease-in-out;
 }
 
+.video-embed-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(13, 71, 161, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    color: #1e3a5f;
+    transition: transform 0.3s ease-in-out;
+}
