@@ -1,12 +1,19 @@
 /* General Body & Font Styles */
+* {
+    box-sizing: border-box;
+}
+
 body {
     /* Use a standard, clean font */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
+    padding: 0;
     /* Professional light blue background */
     background-color: #e8f4f8;
     color: #1e3a5f; /* Deep blue text for contrast */
     overflow-x: hidden; /* Prevents horizontal scroll */
+    min-height: 100vh;
+    line-height: 1.6;
 }
 
 /* Base Header and Navigation (Applies to both Home and Projects) */
@@ -15,12 +22,13 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 50px;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
     z-index: 3; /* High z-index for navigation */
+    flex-wrap: wrap;
 }
 
 .logo a {
@@ -36,7 +44,8 @@ nav ul {
     padding: 0;
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -71,11 +80,12 @@ nav a:hover, nav a.active {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 50px;
-    padding: 0 50px;
+    gap: 30px;
+    padding: 0 20px;
     width: 100%;
     max-width: 1200px;
     box-sizing: border-box;
+    flex-wrap: wrap;
 }
 
 .text-content {
@@ -85,10 +95,11 @@ nav a:hover, nav a.active {
 }
 
 .text-content h1 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 2.5rem);
     margin: 0 0 10px 0;
     font-weight: 600;
     color: #051835;
+    line-height: 1.2;
 }
 
 .underline {
@@ -99,9 +110,10 @@ nav a:hover, nav a.active {
 }
 
 .text-content p {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
     line-height: 1.6;
     color: #0e417c;
+    margin-bottom: 20px;
 }
 
 .text-content i {
@@ -133,12 +145,14 @@ nav a:hover, nav a.active {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 450px;
+    max-width: 400px;
+    min-width: 250px;
 }
 
 .image-content img {
     width: 100%;
     height: auto;
+    max-width: 350px;
     border-radius: 8px;
     box-shadow: 0 6px 20px rgba(13, 71, 161, 0.15);
 }
@@ -159,13 +173,13 @@ nav a:hover, nav a.active {
 /* About Section Styles */
 .about-section {
     background-color: #e8f4f8;
-    padding: 80px 50px;
+    padding: 60px 20px;
     text-align: center;
     color: #1e3a5f;
 }
 
 .about-section h2 {
-    font-size: 2rem;
+    font-size: clamp(1.8rem, 4vw, 2rem);
     color: #051835;
     margin-bottom: 20px;
     font-weight: 600;
@@ -178,9 +192,10 @@ nav a:hover, nav a.active {
 
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+    padding: 0 10px;
 }
 
 .card {
@@ -298,10 +313,11 @@ nav a:hover, nav a.active {
 }
 
 .page-title h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 600;
     margin: 0;
     color: #051835;
+    line-height: 1.2;
 }
 
 .page-title .underline {
@@ -409,7 +425,7 @@ nav a:hover, nav a.active {
 
 /* Research Timeline - Continuous Layout */
 .research-timeline {
-    padding: 60px 80px 60px 200px;
+    padding: 40px 20px;
     max-width: 1400px;
     margin: 0 auto;
     background-color: #e8f4f8;
@@ -420,9 +436,9 @@ nav a:hover, nav a.active {
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
     color: #051835;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     padding-bottom: 15px;
     border-bottom: 3px solid #125184;
     font-weight: 600;
@@ -446,13 +462,14 @@ nav a:hover, nav a.active {
 .project-content {
     display: flex;
     align-items: center;
-    gap: 50px;
-    padding: 40px;
+    gap: 30px;
+    padding: 30px 20px;
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(13, 71, 161, 0.08);
     transition: all 0.4s ease;
     border-left: 4px solid transparent;
+    flex-wrap: wrap;
 }
 
 .project-content:hover {
@@ -472,8 +489,8 @@ nav a:hover, nav a.active {
 
 .project-image {
     flex: 1;
-    min-width: 400px;
-    max-width: 500px;
+    min-width: 250px;
+    max-width: 400px;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(13, 71, 161, 0.12);
@@ -482,7 +499,7 @@ nav a:hover, nav a.active {
 
 .project-image img {
     width: 100%;
-    height: 350px;
+    height: clamp(200px, 30vw, 350px);
     object-fit: contain;
     display: block;
     transition: transform 0.4s ease;
@@ -499,7 +516,7 @@ nav a:hover, nav a.active {
 }
 
 .project-details h3 {
-    font-size: 1.9rem;
+    font-size: clamp(1.3rem, 3vw, 1.9rem);
     margin-top: 0;
     margin-bottom: 1rem;
     color: #051835;
@@ -507,7 +524,7 @@ nav a:hover, nav a.active {
 }
 
 .project-details p {
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
     line-height: 1.8;
     margin-bottom: 1.5rem;
     color: #0e417c;
@@ -651,94 +668,106 @@ nav a:hover, nav a.active {
 }
 
 /* ------------------------------------------- */
-/* --- Responsive Adjustments (Enhanced) --- */
+/* --- Comprehensive Responsive Design --- */
 /* ------------------------------------------- */
-@media (max-width: 1200px) {
+/* Large Desktop (1400px and up) */
+@media (min-width: 1400px) {
+    .hero-content {
+        gap: 50px;
+        padding: 0 50px;
+    }
+    
+    .research-timeline {
+        padding: 60px 80px 60px 220px;
+    }
+    
+    .timeline-sidebar {
+        left: 40px;
+    }
+}
+
+/* Desktop (1200px to 1399px) */
+@media (max-width: 1399px) and (min-width: 1200px) {
     .research-timeline {
         padding: 60px 40px 60px 160px;
     }
     
     .timeline-sidebar {
-        left: 15px;
-        gap: 30px;
+        left: 30px;
         max-width: 120px;
     }
     
     .timeline-label {
-        font-size: 1rem;
         max-width: 100px;
-    }
-    
-    .timeline-item.active .timeline-label {
-        font-size: 1.3rem;
-    }
-    
-    .project-content {
-        gap: 30px;
-        padding: 30px;
-    }
-    
-    .project-image {
-        min-width: 350px;
     }
 }
 
-@media (max-width: 900px) {
-    /* Home Section Responsiveness */
+/* Tablet Landscape (992px to 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .hero-content {
+        gap: 25px;
+        padding: 0 30px;
+    }
+    
+    .research-timeline {
+        padding: 50px 30px 50px 140px;
+    }
+    
+    .timeline-sidebar {
+        left: 20px;
+        max-width: 110px;
+    }
+    
+    .timeline-label {
+        font-size: 0.95rem;
+        max-width: 90px;
+    }
+    
+    .project-content {
+        gap: 25px;
+        padding: 25px 15px;
+    }
+    
+    .project-image {
+        min-width: 200px;
+        max-width: 350px;
+    }
+}
+
+/* Tablet Portrait (768px to 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+    
     .hero-content {
         flex-direction: column;
         text-align: center;
+        gap: 20px;
         padding: 0 20px;
     }
-
-    .image-content {
-        margin-top: 30px;
-        max-width: 90%;
-    }
-
+    
     .text-content {
-        max-width: 90%;
-    }
-
-    .social-icons {
-        justify-content: center;
-    }
-
-    header {
-        padding: 20px 20px;
-    }
-
-    .logo a {
-        font-size: 1.2rem;
-    }
-
-    nav ul {
-        gap: 15px;
-    }
-
-    nav a {
-        font-size: 0.9rem;
+        max-width: 100%;
     }
     
-    /* Research Page Responsiveness */
-    .timeline-sidebar {
-        display: none; /* Hide on mobile */
+    .image-content {
+        max-width: 300px;
     }
     
     .research-timeline {
         padding: 40px 20px;
     }
     
+    .timeline-sidebar {
+        display: none;
+    }
+    
     .project-content,
     .project-content.reverse {
         flex-direction: column;
         gap: 20px;
-        padding: 25px;
-    }
-    
-    .project-content:hover,
-    .project-content.reverse:hover {
-        transform: translateY(-5px);
+        padding: 25px 20px;
     }
     
     .project-image {
@@ -746,54 +775,104 @@ nav a:hover, nav a.active {
         max-width: 100%;
     }
     
-    .project-image img {
-        height: 250px;
+    .card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
     }
     
-    .section-title {
-        font-size: 2rem;
+    .nav-icons {
+        gap: 25px;
     }
     
-    .category-nav {
+    .nav-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* Mobile Landscape (576px to 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+    header {
+        padding: 12px 15px;
         flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    nav {
+        margin-top: 10px;
+        width: 100%;
+    }
+    
+    nav ul {
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    nav a {
+        font-size: 1rem;
+    }
+    
+    .hero-content {
+        padding: 0 15px;
         gap: 15px;
     }
     
-    .category-link {
-        font-size: 1rem;
-        padding: 8px 20px;
+    .about-section {
+        padding: 40px 15px;
     }
     
-    /* Old Projects Page Responsiveness */
-    .project-card, .project-card.image-right {
-        flex-direction: column;
-    }
-
-    .project-card .project-image {
-        min-width: 100%;
-        max-height: 250px;
-    }
-
-    .project-card .project-details {
-        padding: 30px 25px;
-    }
-
-    .project-links {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .project-links .btn-link {
-        margin-right: 0;
-    }
-
-    .page-title h1 {
-        font-size: 2.5rem;
-    }
-
-    .video-grid {
+    .card-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 5px;
+    }
+    
+    .card {
+        padding: 20px;
+    }
+    
+    .research-timeline {
+        padding: 30px 15px;
+    }
+    
+    .project-content,
+    .project-content.reverse {
+        padding: 20px 15px;
+        gap: 15px;
+    }
+    
+    .project-image img {
+        height: clamp(180px, 25vw, 250px);
+    }
+    
+    .nav-icons {
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .nav-icon {
+        min-width: 60px;
+        padding: 8px 10px;
+    }
+    
+    .nav-icon i {
+        font-size: 1.3rem;
+    }
+    
+    .nav-icon span {
+        font-size: 0.8rem;
+    }
+    
+    .nav-toggle {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+        bottom: 15px;
+        right: 15px;
     }
 }
 
@@ -860,6 +939,32 @@ nav a:hover, nav a.active {
     
     .academic-card h3 {
         font-size: 1.3rem;
+    }
+    
+    .nav-icons {
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .nav-icon {
+        min-width: 60px;
+        padding: 8px 10px;
+    }
+    
+    .nav-icon i {
+        font-size: 1.3rem;
+    }
+    
+    .nav-icon span {
+        font-size: 0.8rem;
+    }
+    
+    .nav-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+        bottom: 15px;
+        right: 15px;
     }
 }
 
