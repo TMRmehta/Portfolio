@@ -30,7 +30,7 @@
             <!-- Category Navigation -->
             <div class="category-nav">
                 <a href="#scientific" class="category-link">Scientific</a>
-                <a href="#humanities" class="category-link">History</a>
+                <a href="#history" class="category-link">History</a>
             </div>
         </div>
     </section>
@@ -259,7 +259,7 @@
                              target="_blank"
                              rel="noopener noreferrer"
                              aria-label="Open Education for All project website">
-                            <img src="assets/images/EB.jpg"
+                            <img src="assets/images/EA.jpg"
                             alt="Education for All Project"
                             loading="lazy" />
                         </a>
@@ -310,6 +310,33 @@
         
     </main>
 
+    <!-- Bottom Navigation Icons -->
+    <footer class="bottom-navigation">
+        <div class="nav-icons">
+            <a href="index.html" class="nav-icon" aria-label="Home">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="research.html" class="nav-icon active" aria-label="Research">
+                <i class="fas fa-microscope"></i>
+                <span>Research</span>
+            </a>
+            <a href="community.html" class="nav-icon" aria-label="Community">
+                <i class="fas fa-users"></i>
+                <span>Community</span>
+            </a>
+            <a href="experiences.html" class="nav-icon" aria-label="Experiences">
+                <i class="fas fa-briefcase"></i>
+                <span>Experiences</span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Navigation Toggle Button -->
+    <div class="nav-toggle" id="navToggle">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
     <script>
         // Smooth scrolling for category navigation
         document.querySelectorAll('.category-link').forEach(link => {
@@ -353,6 +380,7 @@
         updateTimeline();
     </script>
 
+    <script src="script.js"></script>
 
 </body>
 </html>

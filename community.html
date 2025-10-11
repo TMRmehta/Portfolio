@@ -29,7 +29,7 @@
       <div class="underline"></div>
       <div class="category-nav">
         <a href="#Volunteerism" class="category-link">Volunteerism</a>
-        <a href="#Leadership (Non-Profit)" class="category-link">Leadership (Non-Profit)</a>
+        <a href="#Leadership" class="category-link">Leadership (Non-Profit)</a>
       </div>
     </div>
   </section>
@@ -47,7 +47,7 @@
 
   <main class="research-timeline" id="community-timeline"> 
     
-    <section id="volunteerism" class="research-section">
+    <section id="Volunteerism" class="research-section">
       <h2 class="section-title">Volunteerism</h2>
 
       <div class="project-item" data-category="volunteerism">
@@ -89,7 +89,7 @@
 
     <hr>
 
-    <section id="Leadershi (Non-Profit)" class="research-section">
+    <section id="Leadership" class="research-section">
       <h2 class="section-title">Leadership (Non-Profit)</h2>
 
       <div class="project-item" data-category="Leadership (Non-Profit)">
@@ -168,6 +168,36 @@
     // Initial call to set the active item on page load
     updateTimeline();
   </script>
+
+  <!-- Bottom Navigation Icons -->
+  <footer class="bottom-navigation">
+    <div class="nav-icons">
+      <a href="index.html" class="nav-icon" aria-label="Home">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="research.html" class="nav-icon" aria-label="Research">
+        <i class="fas fa-microscope"></i>
+        <span>Research</span>
+      </a>
+      <a href="community.html" class="nav-icon active" aria-label="Community">
+        <i class="fas fa-users"></i>
+        <span>Community</span>
+      </a>
+      <a href="experiences.html" class="nav-icon" aria-label="Experiences">
+        <i class="fas fa-briefcase"></i>
+        <span>Experiences</span>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Navigation Toggle Button -->
+  <div class="nav-toggle" id="navToggle">
+    <i class="fas fa-chevron-up"></i>
+  </div>
+
+
+  <script src="script.js"></script>
 
 </body>
 </html>
