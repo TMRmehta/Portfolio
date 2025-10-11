@@ -42,7 +42,7 @@ nav ul {
 nav a {
     color: #0e417c; /* Medium blue link color */
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding-bottom: 5px;
     transition: color 0.3s ease, border-bottom 0.3s ease;
 }
@@ -85,7 +85,7 @@ nav a:hover, nav a.active {
 }
 
 .text-content h1 {
-    font-size: 4rem;
+    font-size: 2.5rem;
     margin: 0 0 10px 0;
     font-weight: 600;
     color: #051835;
@@ -154,6 +154,87 @@ nav a:hover, nav a.active {
     align-items: center;
     box-sizing: border-box;
     z-index: 2;
+}
+
+/* About Section Styles */
+.about-section {
+    background-color: #e8f4f8;
+    padding: 80px 50px;
+    text-align: center;
+    color: #1e3a5f;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    color: #051835;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.tab-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 6px 20px rgba(13, 71, 161, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(13, 71, 161, 0.15);
+    border-left-color: #125184;
+}
+
+.academic-card h3 {
+    font-size: 1.5rem;
+    color: #051835;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.institution {
+    font-size: 1.1rem;
+    color: #125184;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.date-location {
+    font-size: 0.95rem;
+    color: #0e417c;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.academic-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.academic-card li {
+    font-size: 1rem;
+    color: #1e3a5f;
+    line-height: 1.6;
+    padding: 8px 0;
+    border-bottom: 1px solid #e8f4f8;
+}
+
+.academic-card li:last-child {
+    border-bottom: none;
 }
 
 .camera-icon, .scroll-down-icon {
@@ -758,6 +839,28 @@ nav a:hover, nav a.active {
     .section-title {
         font-size: 1.7rem;
     }
+    
+    /* About Section Responsive */
+    .about-section {
+        padding: 60px 20px;
+    }
+    
+    .about-section h2 {
+        font-size: 2.5rem;
+    }
+    
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .card {
+        padding: 25px;
+    }
+    
+    .academic-card h3 {
+        font-size: 1.3rem;
+    }
 }
 
 .video-embed-card {
@@ -768,4 +871,200 @@ nav a:hover, nav a.active {
     padding: 20px;
     color: #1e3a5f;
     transition: transform 0.3s ease-in-out;
+}
+
+/* Bottom Navigation Styles */
+.bottom-navigation {
+    background-color: #ffffff;
+    border-top: 1px solid #bbdefb;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 -2px 10px rgba(13, 71, 161, 0.1);
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.bottom-navigation.show {
+    transform: translateY(0);
+}
+
+.nav-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #b1dcff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;
+    box-shadow: 0 4px 15px rgba(18, 81, 132, 0.3);
+    transition: all 0.3s ease;
+}
+
+.nav-toggle:hover {
+    background-color: #a6caff;
+    transform: scale(1.1);
+}
+
+.nav-toggle i {
+    transition: transform 0.3s ease;
+}
+
+.nav-toggle.active i {
+    transform: rotate(180deg);
+}
+
+/* Navigation Hint Button */
+.nav-hint {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #125184;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.8rem;
+    cursor: pointer;
+    z-index: 1001;
+    box-shadow: 0 2px 8px rgba(18, 81, 132, 0.3);
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.nav-hint:hover {
+    background-color: #051835;
+    transform: translateX(-50%) scale(1.2);
+    opacity: 1;
+}
+
+.nav-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #0e417c;
+    transition: all 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 8px;
+    min-width: 80px;
+}
+
+.nav-icon:hover {
+    color: #125184;
+    background-color: #e8f4f8;
+    transform: translateY(-2px);
+}
+
+.nav-icon.active {
+    color: #051835;
+    background-color: #bbdefb;
+}
+
+.nav-icon i {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.nav-icon span {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Add bottom padding to main content to account for fixed footer */
+body {
+    padding-bottom: 100px;
+}
+
+/* Responsive adjustments for bottom navigation */
+@media (max-width: 768px) {
+    .nav-icons {
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .nav-icon {
+        min-width: 60px;
+        padding: 8px 10px;
+    }
+    
+    .nav-icon i {
+        font-size: 1.3rem;
+    }
+    
+    .nav-icon span {
+        font-size: 0.8rem;
+    }
+    
+    .nav-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .nav-hint {
+        width: 25px;
+        height: 25px;
+        font-size: 0.7rem;
+        bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-icons {
+        gap: 15px;
+    }
+    
+    .nav-icon {
+        min-width: 50px;
+        padding: 6px 8px;
+    }
+    
+    .nav-icon i {
+        font-size: 1.2rem;
+    }
+    
+    .nav-icon span {
+        font-size: 0.75rem;
+    }
+    
+    .nav-toggle {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .nav-hint {
+        width: 22px;
+        height: 22px;
+        font-size: 0.6rem;
+        bottom: 10px;
+    }
 }
