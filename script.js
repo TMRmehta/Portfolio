@@ -4,9 +4,53 @@ document.addEventListener('DOMContentLoaded', function() {
     const bottomNav = document.querySelector('.bottom-navigation');
     const navHint = document.getElementById('navHint');
     const navHintPreview = document.getElementById('navHintPreview');
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
     let isNavVisible = false;
     let autoRevealTriggered = false;
     let hintHoverTimeout;
+
+    // Hamburger Menu Functionality
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            if (navMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close menu when clicking on nav links
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (navMenu.classList.contains('active') && 
+                !hamburger.contains(event.target) && 
+                !navMenu.contains(event.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Prevent menu from closing when clicking inside it
+        navMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
 
     // Toggle navigation on button click
     if (navToggle) {
