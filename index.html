@@ -34,41 +34,52 @@
         </header>
 
         <main class="hero-content">
-<section class="intro" aria-labelledby="intro-title" style="
-  --bg:#0b1220; --ink:#e8eef6; --muted:#a9b6c7; --accent:#22d3ee; --accent2:#a78bfa;
-  max-width:800px;margin:0 auto;padding:2rem 1rem;color:var(--ink);
-">
-  <h2 id="intro-title" style="margin:0 0 .5rem;font-size:clamp(1.75rem,3vw,2.25rem);">
-    Who am I?
-  </h2>
+<section class="intro theme-light" aria-labelledby="intro-title">
+  <style>
+    /* ==== Palette (switch .theme-light <-> .theme-dark) ==== */
+    .theme-light { --bg:#ffffff; --ink:#111827; --muted:#4b5563; --accent:#2563eb; --chip-bg:#eaf2ff; --chip-border:#c7dbff; }
+    .theme-dark  { --bg:#0b1220; --ink:#e8eef6; --muted:#a9b6c7; --accent:#60a5fa; --chip-bg:#172033;  --chip-border:#2a3a58; }
 
-  <!-- simple gradient underline -->
-  <div style="
-    width:110px;height:4px;border-radius:999px;margin:.25rem 0 1.25rem;
-    background:linear-gradient(90deg,var(--accent),var(--accent2));
-  "></div>
+    .intro { background: var(--bg); color: var(--ink); max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
 
-  <!-- roles as lightweight badges -->
-  <p style="margin:0 0 .75rem;font-weight:600;">
-    <span style="display:inline-block;background:rgba(34,211,238,.12);border:1px solid rgba(34,211,238,.35);color:var(--ink);padding:.35rem .6rem;border-radius:999px;margin:.2rem .25rem 0 0;">Researcher</span>
-    <span style="display:inline-block;background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.35);padding:.35rem .6rem;border-radius:999px;margin:.2rem .25rem 0 0;">Founder</span>
-    <span style="display:inline-block;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.35);padding:.35rem .6rem;border-radius:999px;margin:.2rem .25rem 0 0;">Teammate</span>
-    <span style="display:inline-block;background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.35);padding:.35rem .6rem;border-radius:999px;margin:.2rem .25rem 0 0;">Community&nbsp;Volunteer</span>
-    <span style="display:inline-block;background:rgba(250,204,21,.12);border:1px solid rgba(250,204,21,.35);padding:.35rem .6rem;border-radius:999px;margin:.2rem .25rem 0 0;">Environmental&nbsp;Steward</span>
-    <span style="display:inline-block;background:rgba(236,72,153,.12);border:1px solid rgba(236,72,153,.35);padding:.35rem .6rem;border-radius:999px;margin:.2rem .25rem 0 0;">Athlete</span>
-    <span style="display:inline-block;background:rgba(148,163,184,.15);border:1px solid rgba(148,163,184,.35);padding:.35rem .6rem;border-radius:999px;margin:.2rem .25rem 0 0;">Photographer</span>
-  </p>
+    /* Heading + underline */
+    #intro-title { margin: 0 0 .5rem; font-size: clamp(1.8rem,3.2vw,2.25rem); font-weight: 800; letter-spacing:.2px; }
+    .intro .rule { width: 110px; height: 4px; border-radius: 999px; margin: .3rem 0 1.25rem; background: var(--accent); opacity: .9; }
 
-  <!-- short subhead -->
-  <h3 style="margin:.5rem 0 .25rem;font-size:clamp(1.1rem,2vw,1.25rem);color:var(--ink);">
-    A 17-year-old implementing practical innovations
-  </h3>
+    /* Chips (single accent family for cohesion) */
+    .roles { margin: 0 0 .75rem; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: .5rem; }
+    .roles li {
+      display: inline-block;
+      padding: .38rem .65rem;
+      border-radius: 999px;
+      background: var(--chip-bg);
+      border: 1px solid var(--chip-border);
+      color: var(--ink);
+      font-weight: 600; font-size: .98rem;
+    }
 
-  <!-- mission line -->
-  <p style="margin:.25rem 0 0;color:var(--muted);font-size:clamp(1rem,1.8vw,1.075rem);line-height:1.65;">
-    for a cleaner <i style="color:var(--accent);">environment</i>,
-    <i style="color:var(--accent);">accessible</i> health tools, and
-    solutions that help <i style="color:var(--accent);">communities</i>.
+    /* Subhead + mission */
+    .subhead { margin: .75rem 0 .25rem; font-size: clamp(1.1rem,2vw,1.25rem); font-weight: 700; color: var(--ink); }
+    .mission { margin: .25rem 0 0; font-size: clamp(1rem,1.8vw,1.075rem); color: var(--muted); line-height: 1.65; }
+    .mission i { color: var(--accent); font-style: italic; }
+  </style>
+
+  <h2 id="intro-title">Who am I?</h2>
+  <div class="rule" aria-hidden="true"></div>
+
+  <ul class="roles" aria-label="My roles">
+    <li>Researcher</li>
+    <li>Founder</li>
+    <li>Teammate</li>
+    <li>Community&nbsp;Volunteer</li>
+    <li>Environmental&nbsp;Steward</li>
+    <li>Athlete</li>
+    <li>Photographer</li>
+  </ul>
+
+  <div class="subhead">A 17-year-old implementing practical innovations</div>
+  <p class="mission">
+    for a cleaner <i>environment</i>, <i>accessible</i> health tools, and solutions that help <i>communities</i>.
   </p>
 </section>
             
