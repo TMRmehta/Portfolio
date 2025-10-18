@@ -34,25 +34,43 @@
         </header>
 
         <main class="hero-content">
-            <div class="text-content"> 
-                <h1>Who am I?</h1> 
-                
-                <div class="underline"></div> 
-                    <p> 
-                        <h2>a Researcher; a Founder; a Teammate; a Community Volunteer; an Environmental Steward; an Athlete; a Photographer, </h2> 
-                        
-                        <h3>a 17-year-old implementing practical innovations:</h3> 
-                
-                        clean <i>environment,</i>, 
-                        <i>accessible</i> health tools, and 
-                        solutions that helps <i>communities</i>. 
-                    </p> 
-                <div class="social-icons"> 
-                    <a href="mailto:mehtat124@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a> 
-                    <a href="https://www.linkedin.com/in/tushar-mehta-104a21375/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a> 
-                    <a href="https://github.com/TMRmehta" aria-label="GitHub"><i class="fab fa-github"></i></a> 
-                </div> 
-            </div>
+<section class="intro" aria-labelledby="intro-title" style="
+  --bg:#0b1220; --ink:#e8eef6; --muted:#a9b6c7; --accent:#22d3ee; --accent2:#a78bfa;
+  max-width:800px;margin:0 auto;padding:2rem 1rem;color:var(--ink);
+">
+  <h2 id="intro-title" style="margin:0 0 .5rem;font-size:clamp(1.75rem,3vw,2.25rem);">
+    Who am I?
+  </h2>
+
+  <!-- simple gradient underline -->
+  <div style="
+    width:110px;height:4px;border-radius:999px;margin:.25rem 0 1.25rem;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+  "></div>
+
+  <!-- roles as lightweight badges -->
+  <p style="margin:0 0 .75rem;font-weight:600;">
+    <span style="display:inline-block;background:rgba(34,211,238,.12);border:1px solid rgba(34,211,238,.35);color:var(--ink);padding:.35rem .6rem;border-radius:999px;margin:.2rem .25rem 0 0;">Researcher</span>
+    <span style="display:inline-block;background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.35);padding:.35rem .6rem;border-radius:999px;margin:.2rem .25rem 0 0;">Founder</span>
+    <span style="display:inline-block;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.35);padding:.35rem .6rem;border-radius:999px;margin:.2rem .25rem 0 0;">Teammate</span>
+    <span style="display:inline-block;background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.35);padding:.35rem .6rem;border-radius:999px;margin:.2rem .25rem 0 0;">Community&nbsp;Volunteer</span>
+    <span style="display:inline-block;background:rgba(250,204,21,.12);border:1px solid rgba(250,204,21,.35);padding:.35rem .6rem;border-radius:999px;margin:.2rem .25rem 0 0;">Environmental&nbsp;Steward</span>
+    <span style="display:inline-block;background:rgba(236,72,153,.12);border:1px solid rgba(236,72,153,.35);padding:.35rem .6rem;border-radius:999px;margin:.2rem .25rem 0 0;">Athlete</span>
+    <span style="display:inline-block;background:rgba(148,163,184,.15);border:1px solid rgba(148,163,184,.35);padding:.35rem .6rem;border-radius:999px;margin:.2rem .25rem 0 0;">Photographer</span>
+  </p>
+
+  <!-- short subhead -->
+  <h3 style="margin:.5rem 0 .25rem;font-size:clamp(1.1rem,2vw,1.25rem);color:var(--ink);">
+    A 17-year-old implementing practical innovations
+  </h3>
+
+  <!-- mission line -->
+  <p style="margin:.25rem 0 0;color:var(--muted);font-size:clamp(1rem,1.8vw,1.075rem);line-height:1.65;">
+    for a cleaner <i style="color:var(--accent);">environment</i>,
+    <i style="color:var(--accent);">accessible</i> health tools, and
+    solutions that help <i style="color:var(--accent);">communities</i>.
+  </p>
+</section>
             
             
             <div class="image-content">
