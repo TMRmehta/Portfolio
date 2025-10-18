@@ -34,34 +34,41 @@
         </header>
 
         <main class="hero-content">
-<section class="intro theme-light" aria-labelledby="intro-title">
+<section class="intro" aria-labelledby="intro-title">
   <style>
-    /* ==== Palette (switch .theme-light <-> .theme-dark) ==== */
-    .theme-light { --bg:#ffffff; --ink:#111827; --muted:#4b5563; --accent:#2563eb; --chip-bg:#eaf2ff; --chip-border:#c7dbff; }
-    .theme-dark  { --bg:#0b1220; --ink:#e8eef6; --muted:#a9b6c7; --accent:#60a5fa; --chip-bg:#172033;  --chip-border:#2a3a58; }
-
-    .intro { background: var(--bg); color: var(--ink); max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
-
-    /* Heading + underline */
-    #intro-title { margin: 0 0 .5rem; font-size: clamp(1.8rem,3.2vw,2.25rem); font-weight: 800; letter-spacing:.2px; }
-    .intro .rule { width: 110px; height: 4px; border-radius: 999px; margin: .3rem 0 1.25rem; background: var(--accent); opacity: .9; }
-
-    /* Chips (single accent family for cohesion) */
-    .roles { margin: 0 0 .75rem; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: .5rem; }
-    .roles li {
-      display: inline-block;
-      padding: .38rem .65rem;
-      border-radius: 999px;
-      background: var(--chip-bg);
-      border: 1px solid var(--chip-border);
-      color: var(--ink);
-      font-weight: 600; font-size: .98rem;
+    /* ==== Clean, cohesive blue/slate palette (light) ==== */
+    :root{
+      --bg:#eef6fb;        /* soft blue background */
+      --ink:#0f172a;       /* main text */
+      --muted:#475569;     /* paragraph text */
+      --accent:#2563eb;    /* primary accent (underline + italics) */
+      --accent-2:#7c3aed;  /* subtle second tone for underline */
+      --chip-bg:#e5edf9;   /* chip fill */
+      --chip-bg-2:#e8f0ff; /* alt chip fill */
+      --chip-border:#c7d2fe;/* chip border */
+      --chip-ink:#0f172a;  /* chip text */
     }
 
-    /* Subhead + mission */
-    .subhead { margin: .75rem 0 .25rem; font-size: clamp(1.1rem,2vw,1.25rem); font-weight: 700; color: var(--ink); }
-    .mission { margin: .25rem 0 0; font-size: clamp(1rem,1.8vw,1.075rem); color: var(--muted); line-height: 1.65; }
-    .mission i { color: var(--accent); font-style: italic; }
+    .intro{ background:var(--bg); color:var(--ink); max-width:900px; margin:0 auto; padding:2rem 1rem; }
+
+    /* Heading + underline (no opacity fade) */
+    #intro-title{ margin:0 0 .5rem; font-size:clamp(1.8rem,3.2vw,2.25rem); font-weight:800; color:var(--ink); }
+    .rule{ width:110px; height:4px; border-radius:999px; margin:.3rem 0 1.25rem;
+           background:linear-gradient(90deg,var(--accent),var(--accent-2)); }
+
+    /* Roles (chips) — all in one family for cohesion */
+    .roles{ margin:0 0 .75rem; padding:0; list-style:none; display:flex; flex-wrap:wrap; gap:.5rem; }
+    .roles li{
+      display:inline-block; padding:.38rem .65rem; border-radius:999px;
+      background:var(--chip-bg); border:1px solid var(--chip-border);
+      color:var(--chip-ink); font-weight:600; font-size:.98rem;
+      box-shadow:0 1px 0 rgba(15,23,42,.04);
+    }
+    .roles li:nth-child(odd){ background:var(--chip-bg-2); }
+
+    .subhead{ margin:.75rem 0 .25rem; font-size:clamp(1.1rem,2vw,1.25rem); font-weight:700; color:var(--ink); }
+    .mission{ margin:.25rem 0 0; font-size:clamp(1rem,1.8vw,1.075rem); color:var(--muted); line-height:1.65; }
+    .mission i{ color:var(--accent); font-style:italic; }
   </style>
 
   <h2 id="intro-title">Who am I?</h2>
