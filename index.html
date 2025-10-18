@@ -34,66 +34,92 @@
         </header>
 
         <main class="hero-content">
-<section class="intro" aria-labelledby="intro-title">
+<section class="intro theme-light" aria-labelledby="intro-title">
   <style>
-    /* ==== Clean, cohesive blue/slate palette (light) ==== */
-    :root{
-      --bg:#eef6fb;        /* soft blue background */
-      --ink:#0f172a;       /* main text */
-      --muted:#475569;     /* paragraph text */
-      --accent:#2563eb;    /* primary accent (underline + italics) */
-      --accent-2:#7c3aed;  /* subtle second tone for underline */
-      --chip-bg:#e5edf9;   /* chip fill */
-      --chip-bg-2:#e8f0ff; /* alt chip fill */
-      --chip-border:#c7d2fe;/* chip border */
-      --chip-ink:#0f172a;  /* chip text */
+    /* ===== Palette (light). Switch to .theme-dark if you prefer ===== */
+    .theme-light { --bg:#eef6fb; --ink:#0f172a; --muted:#475569; --accent:#2563eb; --accent2:#7c3aed; --chip-bg:#e5edf9; --chip-bg-2:#e8f0ff; --chip-border:#c7d2fe; --chip-ink:#0f172a; }
+    .theme-dark  { --bg:#0b1220; --ink:#e8eef6; --muted:#a9b6c7; --accent:#60a5fa; --accent2:#a78bfa; --chip-bg:#172033; --chip-bg-2:#1b2440; --chip-border:#2a3a58; --chip-ink:#e8eef6; }
+
+    /* Layout */
+    .intro{ background:var(--bg); color:var(--ink); }
+    .intro .wrap{
+      max-width:1100px; margin:0 auto; padding:2rem 1rem;
+      display:grid; grid-template-columns: 1fr 420px; gap:2rem; align-items:center;
+    }
+    @media (max-width:880px){
+      .intro .wrap{ grid-template-columns:1fr; }
+      .intro .photo{ order:2; justify-self:center; }
     }
 
-    .intro{ background:var(--bg); color:var(--ink); max-width:900px; margin:0 auto; padding:2rem 1rem; }
+    /* Fix heading/subhead visibility even if a global style lowers opacity */
+    .intro #intro-title,
+    .intro .subhead{
+      color:var(--ink) !important;
+      opacity:1 !important;
+      text-shadow:none !important;
+      mix-blend-mode:normal !important;
+      margin:0 0 .5rem;
+    }
+    #intro-title{ font-size:clamp(1.9rem,3.2vw,2.4rem); font-weight:800; }
+    .rule{
+      width:110px; height:4px; border-radius:999px; margin:.35rem 0 1.25rem;
+      background:linear-gradient(90deg,var(--accent),var(--accent2));
+    }
 
-    /* Heading + underline (no opacity fade) */
-    #intro-title{ margin:0 0 .5rem; font-size:clamp(1.8rem,3.2vw,2.25rem); font-weight:800; color:var(--ink); }
-    .rule{ width:110px; height:4px; border-radius:999px; margin:.3rem 0 1.25rem;
-           background:linear-gradient(90deg,var(--accent),var(--accent-2)); }
-
-    /* Roles (chips) — all in one family for cohesion */
+    /* Chips */
     .roles{ margin:0 0 .75rem; padding:0; list-style:none; display:flex; flex-wrap:wrap; gap:.5rem; }
     .roles li{
       display:inline-block; padding:.38rem .65rem; border-radius:999px;
       background:var(--chip-bg); border:1px solid var(--chip-border);
-      color:var(--chip-ink); font-weight:600; font-size:.98rem;
-      box-shadow:0 1px 0 rgba(15,23,42,.04);
+      color:var(--chip-ink); font-weight:600; font-size:.98rem; box-shadow:0 1px 0 rgba(15,23,42,.04);
     }
     .roles li:nth-child(odd){ background:var(--chip-bg-2); }
 
-    .subhead{ margin:.75rem 0 .25rem; font-size:clamp(1.1rem,2vw,1.25rem); font-weight:700; color:var(--ink); }
+    /* Body line */
     .mission{ margin:.25rem 0 0; font-size:clamp(1rem,1.8vw,1.075rem); color:var(--muted); line-height:1.65; }
     .mission i{ color:var(--accent); font-style:italic; }
+
+    /* Photo on the right */
+    .photo{ justify-self:end; }
+    .photo img{
+      display:block; width:min(100%,420px); height:auto;
+      border-radius:20px;
+      box-shadow: 0 24px 48px rgba(2, 6, 23, .18);
+      border: 1px solid rgba(15, 23, 42, .06);
+      background:#fff;             /* prevents gray edges on transparent PNGs */
+      object-fit: cover;
+    }
   </style>
 
-  <h2 id="intro-title">Who am I?</h2>
-  <div class="rule" aria-hidden="true"></div>
+  <div class="wrap">
+    <!-- LEFT: text -->
+    <div>
+      <h2 id="intro-title">Who am I?</h2>
+      <div class="rule" aria-hidden="true"></div>
 
-  <ul class="roles" aria-label="My roles">
-    <li>Researcher</li>
-    <li>Founder</li>
-    <li>Teammate</li>
-    <li>Community&nbsp;Volunteer</li>
-    <li>Environmental&nbsp;Steward</li>
-    <li>Athlete</li>
-    <li>Photographer</li>
-  </ul>
+      <ul class="roles" aria-label="My roles">
+        <li>Researcher</li>
+        <li>Founder</li>
+        <li>Teammate</li>
+        <li>Community&nbsp;Volunteer</li>
+        <li>Environmental&nbsp;Steward</li>
+        <li>Athlete</li>
+        <li>Photographer</li>
+      </ul>
 
-  <div class="subhead">A 17-year-old implementing practical innovations</div>
-  <p class="mission">
-    for a cleaner <i>environment</i>, <i>accessible</i> health tools, and solutions that help <i>communities</i>.
-  </p>
+      <div class="subhead">A 17-year-old implementing practical innovations</div>
+      <p class="mission">
+        for a cleaner <i>environment</i>, <i>accessible</i> health tools, and solutions that help <i>communities</i>.
+      </p>
+    </div>
+
+    <!-- RIGHT: photo -->
+    <figure class="photo">
+      <!-- Use forward slashes in the path -->
+      <img src="assets/images/profile-photo.jpg" alt="Portrait of Tushar Mehta" />
+    </figure>
+  </div>
 </section>
-            
-            
-            <div class="image-content">
-                <img src="assets\images\profile-photo.jpg" alt="Tushar Mehta">
-            </div>
 
         </main>
 
