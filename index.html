@@ -108,10 +108,64 @@
       </ul>
 
       <div class="subhead">A 17-year-old implementing practical innovations</div>
-      <p class="mission">
-        for a cleaner <i>environment</i>, <i>accessible</i> health tools, and solutions that help <i>communities</i>.
-      </p>
-    </div>
+
+<!-- Same text, split into bullets (no wording changes) -->
+<ul class="highlights" role="list">
+  <li>
+    <span class="hl-icon" aria-hidden="true">
+      <!-- leaf -->
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M20 4s-7.5.5-11.3 4.3C5.9 11 5.2 13.6 6.7 15.3c1.7 1.9 4.3 1 6.9-1.4S20 4 20 4Z"/>
+        <path d="M9 15s1.5-3.5 7-7"/>
+      </svg>
+    </span>
+    <span>for a cleaner <i>environment</i>,</span>
+  </li>
+
+  <li>
+    <span class="hl-icon" aria-hidden="true">
+      <!-- medical cross -->
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M12 4v16M20 12H4"/>
+      </svg>
+    </span>
+    <span><i>accessible</i> health tools,</span>
+  </li>
+
+  <li>
+    <span class="hl-icon" aria-hidden="true">
+      <!-- people -->
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8">
+        <circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/>
+        <path d="M3 20c0-3 3-5 5-5s5 2 5 5M11 20c0-3 3-5 5-5s5 2 5 5"/>
+      </svg>
+    </span>
+    <span>and solutions that help <i>communities</i>.</span>
+  </li>
+</ul>
+
+<!-- Minimal styles; uses your existing CSS variables -->
+<style>
+  .highlights{
+    margin:.5rem 0 0; padding:0; list-style:none;
+    display:grid; gap:.6rem;
+  }
+  .highlights li{
+    display:flex; align-items:flex-start; gap:.6rem;
+    background: color-mix(in srgb, var(--accent) 6%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+    border-radius:12px; padding:.6rem .75rem;
+    color: var(--muted);
+  }
+  .highlights .hl-icon{
+    flex:0 0 32px; height:32px; width:32px;
+    display:grid; place-items:center;
+    color: var(--accent);
+    background: #fff; border-radius:10px;
+    box-shadow: 0 1px 0 rgba(15,23,42,.06);
+  }
+</style>
+
 
     <!-- RIGHT: photo -->
     <figure class="photo">
