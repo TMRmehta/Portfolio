@@ -165,16 +165,28 @@
             <!-- Environment Projects -->
             <div class="project-item" data-category="environment">
                 <div class="project-content">
-                    <div class="project-image">
+                <div class="project-media">
+                    <video class="project-image"
+                        autoplay
+                        loop
+                        muted
+                        controls
+                        preload="metadata"
+                        playsinline
+                        poster="assets/images/RecycleBot_App.png"
+                        aria-label="RecycleBot Demo">
+                       <source src="assets/images/RecycleBot.mp4" type="video/mp4">
+                    </video>
+                    <div class="project-image" style="margin-top: .5rem;">
                         <a href="https://recyclebot.streamlit.app"
-                             target="_blank"
-                             rel="noopener noreferrer"
-                             aria-label="Open NeuroAID website">
-                            <img src="assets/images/RecycleBot_App.png"
-                            alt="RecycleBot Project"
-                            loading="lazy" />
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-link"
+                        aria-label="Open RecycleBot application">
+                        RecycleBot Application Link ↗
                         </a>
                     </div>
+                </div>
                     <div class="project-details">
                         <h3>RecycleBot – Automated Waste Detection</h3>
                         <p>Visual Transformer for image segmentation followed by a Transfer Learning based CNN image classifier that distinguishes recyclable from organic waste in a real world situation containing cluttered, deformed trash items; shipped as a web app and published in a peer-reviewed journal.</p>
