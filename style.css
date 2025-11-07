@@ -188,6 +188,7 @@ nav a:hover, nav a.active {
     justify-content: center;
     align-items: center;
     background: none;
+    padding-top: 0;
 }
 
 /* Main Hero Content */
@@ -482,7 +483,7 @@ nav a:hover, nav a.active {
     flex-direction: column;
     gap: 35px;
     align-items: flex-start;
-    max-width: 160px;
+    max-width: 200px;
 }
 
 /* Every label visible at all times */
@@ -512,8 +513,9 @@ nav a:hover, nav a.active {
     transform: translateX(0);
     font-weight: 500;
     transition: all 0.3s ease;
-    max-width: 120px;
-    word-wrap: break-word;
+    max-width: 200px;
+    word-break: normal;
+    overflow-wrap: normal;
     line-height: 1.2;
 }
 
@@ -795,7 +797,7 @@ nav a:hover, nav a.active {
     }
     
     .research-timeline {
-        padding: 60px 80px 60px 220px;
+        padding: 60px 80px 60px 260px;
     }
     
     .timeline-sidebar {
@@ -806,16 +808,18 @@ nav a:hover, nav a.active {
 /* Desktop (1200px to 1399px) */
 @media (max-width: 1399px) and (min-width: 1200px) {
     .research-timeline {
-        padding: 60px 40px 60px 160px;
+        padding: 60px 40px 60px 250px;
     }
     
     .timeline-sidebar {
         left: 10px;
-        max-width: 180px;
+        max-width: 220px;
     }
     
     .timeline-label {
-        max-width: 100px;
+        max-width: 220px;
+        word-break: normal;
+        overflow-wrap: normal;
     }
 }
 
@@ -827,17 +831,19 @@ nav a:hover, nav a.active {
     }
     
     .research-timeline {
-        padding: 50px 30px 50px 140px;
+        padding: 50px 30px 50px 200px;
     }
     
     .timeline-sidebar {
         left: 20px;
-        max-width: 110px;
+        max-width: 160px;
     }
     
     .timeline-label {
         font-size: 0.95rem;
-        max-width: 90px;
+        max-width: 160px;
+        word-break: normal;
+        overflow-wrap: normal;
     }
     
     .project-content {
@@ -865,12 +871,23 @@ nav a:hover, nav a.active {
         padding: 15px 20px;
     }
     
+    #home {
+        padding-top: 90px;
+        min-height: 100vh;
+        height: auto;
+    }
+    
     .hero-content {
         flex-direction: column;
         text-align: center;
         gap: 30px;
         padding: 0 20px;
-        margin-top: 80px;
+        margin-top: 0;
+        width: 100%;
+    }
+    
+    .intro .wrap {
+        padding: 1.5rem 1rem 2rem 1rem !important;
     }
     
     .text-content {
@@ -947,12 +964,23 @@ nav a:hover, nav a.active {
         padding: 12px 15px;
     }
     
+    #home {
+        padding-top: 80px;
+        min-height: 100vh;
+        height: auto;
+    }
+    
     .hero-content {
         flex-direction: column;
         text-align: center;
         gap: 25px;
         padding: 0 15px;
-        margin-top: 70px;
+        margin-top: 0;
+        width: 100%;
+    }
+    
+    .intro .wrap {
+        padding: 1rem 1rem 2rem 1rem !important;
     }
     
     .text-content {
@@ -1055,12 +1083,23 @@ nav a:hover, nav a.active {
         font-size: 1.2rem;
     }
     
+    #home {
+        padding-top: 70px;
+        min-height: 100vh;
+        height: auto;
+    }
+    
     .hero-content {
         flex-direction: column;
         text-align: center;
         gap: 20px;
         padding: 0 10px;
-        margin-top: 60px;
+        margin-top: 0;
+        width: 100%;
+    }
+    
+    .intro .wrap {
+        padding: 1rem 1rem 2rem 1rem !important;
     }
     
     .text-content {
