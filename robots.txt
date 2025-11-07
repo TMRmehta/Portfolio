@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tusharmehta.me/sitemap.xml
