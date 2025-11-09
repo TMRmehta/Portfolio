@@ -25,4 +25,16 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://tusharmehta.me/recyclebot</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://tusharmehta.me/neuroaid</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>
