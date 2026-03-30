@@ -2,16 +2,86 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://recyclebot-192262207218.us-central1.run.app/">
-    <link rel="canonical" href="https://recyclebot-192262207218.us-central1.run.app/">
-    <title>Redirecting to RecycleBot...</title>
-    <script>
-        // Immediate redirect
-        window.location.replace("https://recyclebot-192262207218.us-central1.run.app/");
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecycleBot - Tushar Mehta</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            padding-bottom: 100px;
+        }
+
+        .app-container {
+            margin-top: 70px;
+            width: 100%;
+            height: calc(100vh - 70px);
+            padding-bottom: 100px;
+        }
+
+        .streamlit-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <p>If you are not redirected automatically, <a href="https://recyclebot-192262207218.us-central1.run.app/">click here</a>.</p>
+    <header>
+        <div class="logo">
+            <a href="/">Tushar Mehta</a>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Open navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/research.html">Research</a></li>
+                <li><a href="/community.html">Community</a></li>
+                <li><a href="/experiences.html">Experiences</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="app-container">
+        <iframe 
+            class="streamlit-frame"
+            src="https://recyclebot-192262207218.us-central1.run.app/"
+            title="RecycleBot App">
+        </iframe>
+    </div>
+
+    <footer class="bottom-navigation">
+        <div class="nav-icons">
+            <a href="/research.html" class="nav-icon" aria-label="Research">
+                <i class="fas fa-microscope"></i>
+                <span>Research</span>
+            </a>
+            <a href="/community.html" class="nav-icon" aria-label="Community">
+                <i class="fas fa-users"></i>
+                <span>Community</span>
+            </a>
+            <a href="/experiences.html" class="nav-icon" aria-label="Experiences">
+                <i class="fas fa-briefcase"></i>
+                <span>Experiences</span>
+            </a>
+        </div>
+    </footer>
+
+    <div class="nav-toggle" id="navToggle">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script src="../script.js"></script>
 </body>
 </html>
 

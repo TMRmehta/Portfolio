@@ -5,62 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AQISense - Tushar Mehta</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             width: 100%;
+            padding-bottom: 100px;
         }
-        
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .navbar-logo a {
-            text-decoration: none;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #0f172a;
-        }
-        
-        .navbar-logo a:hover {
-            color: #2563eb;
-        }
-        
-        .navbar-nav {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .navbar-nav a {
-            text-decoration: none;
-            color: #475569;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .navbar-nav a:hover {
-            color: #2563eb;
-        }
-        
+
         .app-container {
             margin-top: 70px;
             width: 100%;
             height: calc(100vh - 70px);
+            padding-bottom: 100px;
         }
-        
+
         .streamlit-frame {
             width: 100%;
             height: 100%;
@@ -70,18 +31,27 @@
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar-logo">
+    <header>
+        <div class="logo">
             <a href="/">Tushar Mehta</a>
         </div>
-        <div class="navbar-nav">
-            <a href="/">Home</a>
-            <a href="/research.html">Research</a>
-            <a href="/community.html">Community</a>
-            <a href="/experiences.html">Experiences</a>
-        </div>
-    </nav>
-    
+
+        <button class="hamburger" id="hamburger" aria-label="Open navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/research.html">Research</a></li>
+                <li><a href="/community.html">Community</a></li>
+                <li><a href="/experiences.html">Experiences</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="app-container">
         <iframe 
             class="streamlit-frame"
@@ -89,5 +59,28 @@
             title="Delhi AQI App">
         </iframe>
     </div>
+
+    <footer class="bottom-navigation">
+        <div class="nav-icons">
+            <a href="/research.html" class="nav-icon" aria-label="Research">
+                <i class="fas fa-microscope"></i>
+                <span>Research</span>
+            </a>
+            <a href="/community.html" class="nav-icon" aria-label="Community">
+                <i class="fas fa-users"></i>
+                <span>Community</span>
+            </a>
+            <a href="/experiences.html" class="nav-icon" aria-label="Experiences">
+                <i class="fas fa-briefcase"></i>
+                <span>Experiences</span>
+            </a>
+        </div>
+    </footer>
+
+    <div class="nav-toggle" id="navToggle">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script src="../script.js"></script>
 </body>
 </html>
